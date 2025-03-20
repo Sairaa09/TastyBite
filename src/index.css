@@ -1,0 +1,36 @@
+/* FE9E2B */
+/* 0f0f0f */
+@import "tailwindcss";
+
+
+.theme{
+  background-color: #0F0F0F;
+  color: #FE9E2B ;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure the element is still scrollable */
+.scrollable-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Yeh white ya dark mode ke liye icon ka color change karega */
+}
+
+input:focus {
+  color: white;
+  outline: 1px solid #FE9E2B; /* Optional: Highlight border on focus */
+  border: none;
+}
+select:focus {
+  
+  outline: 1px solid #FE9E2B; /* Optional: Highlight border on focus */
+  border: none;
+}
+
