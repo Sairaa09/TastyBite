@@ -27,7 +27,6 @@ const Cart = () => {
   //  checkout button
   const handleCheckout = () => {
     if (cartItems.length > 0) {
-      dispatch(clearCart());
       navigate("/payment", { state: { items: cartItems } });
     }
   };

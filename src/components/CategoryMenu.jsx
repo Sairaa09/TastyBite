@@ -34,7 +34,7 @@ const CategoryMenu = () => {
         Find the best food
       </h3>
         {/* food categories */}
-      <div className="flex justify-center items-center gap-3  py-12 flex-wrap  theme">
+      <div className="flex justify-center items-center gap-3  py-8 flex-wrap  theme">
         <div
           className={`flex flex-col items-center gap-2 p-3 rounded-xl ${
             selectedCategory === "All" ? "bg-[#1b1b1b]" : ""

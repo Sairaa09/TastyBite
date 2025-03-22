@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -6,6 +6,7 @@ import { clearCart } from "../redux/Slices/CartSlice";
 import backIcon from "../assets/back.svg";
 
 const Payment = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
@@ -17,18 +18,30 @@ const Payment = () => {
     });
     return totalPrice;
   };
-  const handlePayment = () => {
-    console.log("Navigating to success page...");
+  const handlePayment = (e) => {
+    e.preventDefault();
+
     if (items.length > 0) {
       dispatch(clearCart());
       navigate("/success");
     }
   };
 
+  useEffect(() => {
+    setIsVisible(true); 
+  }, []);
+
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center theme ">
       {/* left side  */}
-      <div className="w-1/2 flex flex-col items-center justify-start gap-12 mb-4 lg:h-screen pt-16">
+      <div
+        className={`w-1/2 flex flex-col items-center justify-start  gap-12 mb-4 lg:h-screen pt-16 transition-all duration-1000
+          ${
+            isVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-50"
+          }`}
+      >
         <div className="flex items-center justify-center gap-2">
           <img
             src={backIcon}
@@ -52,7 +65,7 @@ const Payment = () => {
             items.map((item, index) => (
               <div
                 key={index}
-                className="flex  justify-around items-center text-white"
+                className="flex  justify-between items-center text-white  border border-gray-600 pb-2 border-x-0 border-t-0 mr-10"
               >
                 <span className="font-medium">{item.name}</span>
                 <span className="font-medium">Rs.{item.price}</span>
@@ -62,8 +75,16 @@ const Payment = () => {
       </div>
 
       {/* right side */}
-      <div className="w-full lg:w-1/2 lg:shadow-[-1px_0px_11px_rgba(0,0,0,0.1)] h-screen flex  justify-center  ">
-        <form className="flex flex-col items-start  justify-center gap-4  ">
+      <div
+        className={`w-full lg:w-1/2  h-screen flex  justify-center items-start  border border-l-gray-600 border-y-0 border-r-0 `}
+      >
+        <form
+          className={`flex flex-col items-start  justify-center gap-4 mt-16 transition-all duration-1000
+          ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-50"
+          }`}
+          onSubmit={handlePayment}
+        >
           <h1 className="text-[#FE9E2B] font-medium text-xl hidden lg:block">
             Pay With Card
           </h1>
@@ -81,7 +102,7 @@ const Payment = () => {
               Card information
             </span>
             <input
-              type="tel"
+              type="number"
               pattern="[0-9\s]{13,19}"
               maxLength="19"
               placeholder="1234 1234 1234 1234"
@@ -95,7 +116,7 @@ const Payment = () => {
                 required
               />
               <input
-                type="text"
+                type="number"
                 placeholder="CVC"
                 className="border border-white border-t-0 border-l-0 text-white w-1/2 px-2 py-2 rounded-br-md"
                 maxLength={4}
@@ -201,7 +222,6 @@ const Payment = () => {
           <button
             className="w-full bg-blue-600 text-blue-300 font-medium text-center py-2 rounded-md text-lg my-4 cursor-pointer"
             type="submit"
-            onClick={handlePayment}
           >
             Pay
           </button>

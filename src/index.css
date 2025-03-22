@@ -1,7 +1,10 @@
-/* FE9E2B */
-/* 0f0f0f */
+
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
+*{
+  font-family: "Schibsted Grotesk", sans-serif;
+}
 
 .theme{
   background-color: #0F0F0F;
@@ -33,4 +36,18 @@ select:focus {
   outline: 1px solid #FE9E2B; /* Optional: Highlight border on focus */
   border: none;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 
