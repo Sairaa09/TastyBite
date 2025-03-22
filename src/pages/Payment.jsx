@@ -102,7 +102,7 @@ const Payment = () => {
               Card information
             </span>
             <input
-              type="number"
+              type="tel"
               pattern="[0-9\s]{13,19}"
               maxLength="19"
               placeholder="1234 1234 1234 1234"
