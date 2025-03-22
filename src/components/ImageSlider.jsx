@@ -2,15 +2,14 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Img1 from '../assets/img1.png'
-import Img2 from '../assets/img2.png'
-import Img3 from '../assets/img3.png'
-import Img4 from '../assets/img4.png'
-import Img5 from '../assets/img5.png'
 
 const ImageSlider = () => {
   const images = [
-    Img1,Img2,Img3,Img4,Img5
+    "https://images.wallpaperscraft.com/image/single/pasta_egg_noodles_103644_1280x720.jpg",
+    "https://images.wallpaperscraft.com/image/single/burger_cutlet_meat_123102_1280x720.jpg",
+    "https://images.wallpaperscraft.com/image/single/meat_baking_vegetables_88477_1280x720.jpg",
+    "https://images.wallpaperscraft.com/image/single/french_toast_toast_chocolate_876434_1280x720.jpg",
+    "https://images.wallpaperscraft.com/image/single/pizza_pastry_appetizing_104513_1280x720.jpg",
   
   ];
 
