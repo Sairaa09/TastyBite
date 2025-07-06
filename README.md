@@ -8,6 +8,8 @@
 ![Tailwind](https://img.shields.io/badge/UI%20Framework-TailwindCSS-38B2AC?logo=tailwindcss)
 ![Live](https://img.shields.io/badge/Live%20Demo-Available-brightgreen)
 ![Last Updated](https://img.shields.io/badge/Updated-July%202025-lightgrey)
+[![Live Preview](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge)](https://tasty-bite-eta.vercel.app/)
+
 
 </div>
 
