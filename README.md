@@ -6,7 +6,6 @@
 
 ![React](https://img.shields.io/badge/Built%20With-React-61DAFB?logo=react)
 ![Tailwind](https://img.shields.io/badge/UI%20Framework-TailwindCSS-38B2AC?logo=tailwindcss)
-![Status](https://img.shields.io/badge/Project-Type: UI-orange)
 ![Live](https://img.shields.io/badge/Live%20Demo-Available-brightgreen)
 ![Last Updated](https://img.shields.io/badge/Updated-July%202025-lightgrey)
 
